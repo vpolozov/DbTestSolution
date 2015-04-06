@@ -1,4 +1,14 @@
-﻿insert into dbo.[Student] ([Id], [Name], [Phone], [Address]) values 
+﻿delete from dbo.[Student];
+delete from dbo.[Course];
+delete from dbo.[Marks];
+
+DBCC CHECKIDENT ([Student], RESEED, 1);
+DBCC CHECKIDENT ([Course], RESEED, 1);
+--DBCC CHECKIDENT ([Marks], RESEED, 1);
+
+GO
+
+insert into dbo.[Student] ([Id], [Name], [Phone], [Address]) values
 (1, N'Иванов', '1234567',	N'Невский,9'),
 (2, N'Петрова',	'2345678',	N'Садовая,21'),
 (3, N'Сидоров',	'3456789',	''),
